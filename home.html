@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="unnamed.png" alt="Profile Picture" class="profile-pic">
+        <h2>Ruben Mujdei</h2>
+        <p>Software Developer</p>
+        <ul class="nav-links">
+            <li><a onclick="showFrame('tabs')">Projects</a></li>
+            <li> <a href="resume.pdf" target="_blank">Resume</a></li>
+            <li> <a onclick="showFrame('contact')">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+      <div class="hero-section">
+          <div class="hero-text">
+              <h1>Hi, I'm <br> <span>Ruben Mujdei</span></h1>
+              <p>I  am a young and passionate programmer who loves coding and isn’t afraid of new challenges while staying focused on what I already master. I feel comfortable working in a team, adapting quickly to different environments, and
+                continuously improving my skills to contribute effectively to any project.</p>
+          </div>
+      </div>
+      <div class="container">
+        
+      </div>
+      <div id="tabs" class="content active">
+        <div class="tab-buttons">
+            <button onclick="showTab('project1')">Project 1</button>
+            <button onclick="showTab('project2')">Project 2</button>
+            <button onclick="showTab('project3')">Project 3</button>
+            <button onclick="showTab('project4')">Project 4</button>
+            <button onclick="showTab('project5')">Project 4</button>
+        </div>
+
+        <div id="project1" class="tab-content active">
+          <div class="project-text">
+            <h2>ECU Simulation with Yocto(Poky)</h2>
+            <p>In this personal project, I aimed to simulate various ECUs of a car, from the central MCU to various ECUs with sensors. I implemented ECUs for doors, battery, engine, and even a LiDAR and a traffic sign recognition camera. The goal of this project was to enable communication between different ECUs using the CAN protocol and embed the software in an image of personalized Linux distro using Poky. </p>
+            <p>The code is entirely written in C++ and uses the SocketCan library. I also implemented a console-based graphical interface that simulates the car's dashboard, displaying open or closed doors, speed, temperature, and engine status. The graphical interface also shows the environment recorded by the LiDAR (with randomly generated points). </p>
+            <p>The different ECUs communicate with each other via CAN and sockets, so the LiDAR is not functional while the car is stopped, speed does not increase when the car is stationary, and if obstacles are detected, the car stops. Additionally, when a traffic sign is detected with a certain speed, the MCU sends messages via CAN to reduce the speed, which in turn sends a request to the ECU to adjust the speed.</p>
+            <p>Several cases of ECU communication are implemented in the program, with each being independent and communicating only through CAN.</p>
+            <p>Also, to integrate the binaries into the Linux image, as I mentioned, I used Poky. I created a layer where I added the C++ code as well as a Linux service that starts at boot and sets up the virtual CAN interfaces to which each ECU connects. After building, the image was launched on QEMU, where the simulation ran successfully.</p>
+            <br>
+            <p><h3>Technologies used:</h3>C++, Makefile, Yocto, QEMU, SocketCAN/CAN protocol</p>
+            <p><a href="https://github.com/yourusername/project1" target="_blank">View Code</a></p>
+          </div>
+      
+          <div class="project-gallery">
+            <div class="gallery-images">
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="Screenshot from 2025-03-27 13-11-37.png" alt="Project Image 1">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="Screenshot from 2025-03-27 13-12-08.png" alt="Project Image 2">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="Screenshot from 2025-03-27 13-14-11.png" alt="Project Image 3">
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+              <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="project2" class="tab-content">
+          <div class="project-text">
+            <h2>Balance Bank Android App</h2>
+            <p>I can't share many details about this project since it's still in progress, and I want to develop it to a level where I can offer it as a service. The project is an Android application that allows users to add cards from different countries and banks, so they can have all their banking data in one place.</p>
+            <p>Users can track their spending, categorize expenses, create new categories in addition to those retrieved via the bank's API, and view their expenses through graphical representations. The app also includes various small features, such as an AI that automatically categorizes expenses based on transactions directly from the card.</p>
+          </br>
+            <p><h3>Technologies used:</h3>JetpackCompose, AndroidStudio, MVVM</p>
+          </div>
+      
+          <div class="project-gallery">
+            <div class="gallery-images">
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="Screenshot from 2025-03-28 09-34-20.png" alt="Project Image 1">
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+              <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="project3" class="tab-content">
+          <div class="project-text">
+            <h2>Honey</h2>
+            <p>In this personal project, I aimed to simulate various ECUs of a car, from the central MCU to various ECUs with sensors. I implemented ECUs for doors, battery, engine, and even a LiDAR and a traffic sign recognition camera. The goal of this project was to enable communication between different ECUs using the CAN protocol and embed the software in an image of personalized Linux distro using Poky. </p>
+            <p>The code is entirely written in C++ and uses the SocketCan library. I also implemented a console-based graphical interface that simulates the car's dashboard, displaying open or closed doors, speed, temperature, and engine status. The graphical interface also shows the environment recorded by the LiDAR (with randomly generated points). </p>
+            <p>The different ECUs communicate with each other via CAN and sockets, so the LiDAR is not functional while the car is stopped, speed does not increase when the car is stationary, and if obstacles are detected, the car stops. Additionally, when a traffic sign is detected with a certain speed, the MCU sends messages via CAN to reduce the speed, which in turn sends a request to the ECU to adjust the speed.</p>
+            <p>Several cases of ECU communication are implemented in the program, with each being independent and communicating only through CAN.</p>
+            <p>Also, to integrate the binaries into the Linux image, as I mentioned, I used Poky. I created a layer where I added the C++ code as well as a Linux service that starts at boot and sets up the virtual CAN interfaces to which each ECU connects. After building, the image was launched on QEMU, where the simulation ran successfully.</p>
+            <br>
+            <p><h3>Technologies used:</h3>C++, Makefile, Yocto, QEMU, SocketCAN/CAN protocol</p>
+            <p><a href="https://github.com/yourusername/project1" target="_blank">View Code</a></p>
+          </div>
+      
+          <div class="project-gallery">
+            <div class="gallery-images">
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="Screenshot from 2025-03-27 13-11-37.png" alt="Project Image 1">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="Screenshot from 2025-03-27 13-12-08.png" alt="Project Image 2">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="Screenshot from 2025-03-27 13-14-11.png" alt="Project Image 3">
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+              <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="project4" class="tab-content">
+          <div class="project-text">
+            <h2>5 DoF Robot Arm</h2>
+            <br>
+            <p>This is one of the most complex projects I have created, and it is my bachelor's thesis for my robotics degree.</p>
+            
+            <h4>Mechanical and Design Aspect</h4>
+            <p>Everything was done by me, and all the parts and mechanisms were designed from scratch using SolidWorks. I also selected the motors and other necessary components for the robot.</p>
+            
+            <h4>Software Components</h4>
+            <p>The software is divided into three main sections:</p>
+            
+            <h5>1. Control System</h5>
+            <p>Written in C++ using Arduino. I tried to avoid using libraries, so the simultaneous motor control is handled through microcontroller interrupts to generate steps for the motors, creating the illusion of synchronized movement. An algorithm calculates acceleration for each motor and sets the next interrupt accordingly.</p>
+            
+            <h5>2. Inverse Kinematics</h5>
+            <p>Written in Python, this part calculates the angle of each joint based on a given point in 3D coordinates.</p>
+            
+            <h5>3. User Interface</h5>
+            <p>Written in C#, this interface communicates with the control system, allowing the user to input the desired position for the robot or manually set the angle for each joint.</p>
+      
+            <br>
+            <p><h3>Technologies used:</h3>C++(Arduino), C#(WindowsForm), Python(PyGame), SolidWorks, 3DPrint</p>
+          </div>
+      
+          <div class="project-gallery">
+            <div class="gallery-images">
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04 (2).jpeg" alt="Project Image 1">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04 (3).jpeg" alt="Project Image 2">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04 (4).jpeg" alt="Project Image 3">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04 (6).jpeg" alt="Project Image 4">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.28.39.jpeg" alt="Project Image 5">
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+              <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="project5" class="tab-content">
+          <div class="project-text">
+            <h2>PCB for Controller Step By Step Motor</h2>
+            <p>This project was carried out as part of the Bosch scholarship program that I participated in during my fourth year of university.</p>
+            <p>In this project, I chose to make a controller for a stepper motor. For this, I divided it into several parts: first, I had the voltage control part with PWM, the phase shift part (for the motor steps) where I used a 555 timer and a multiplexer, the power part where I used 2 H-bridges, and other minor components.</p>
+            <p>I tested everything on software, designed it in KiCad, and then physically ordered a PCB board and electrical components to test them.</p>
+            <br>
+            <p><h3>Technologies used:</h3>KiCAD</p>
+          </div>
+      
+          <div class="project-gallery">
+            <div class="gallery-images">
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04 (1).jpeg" alt="Project Image 1">
+              </div>
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04 (5).jpeg" alt="Project Image 1">
+              </div>
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="WhatsApp Image 2025-03-28 at 13.27.04.jpeg" alt="Project Image 1">
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+              <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="contact" class="content">
+        <br>
+        <div class="contact-info">
+            <h2>Contact Me</h2>
+            <p>Email: natanael_ruben@hotmail.com</p>
+            <!--<p>Phone: +40</p>-->
+            <p>LinkedIn: <a href="https://ro.linkedin.com/in/ruben-mujdei" target="_blank">RubenMujdei</a></p>
+            <p>GitHub: <a href="https://github.com/RubenNatanael?tab=repositories" target="_blank">RubenMujdei</a></p>
+        </div>
+    </div>
+    
+    </div>
+
+    <script>
+        function showFrame(tabId) {
+            document.querySelectorAll('.content').forEach(tab => {
+                tab.classList.remove('active');
+                tab.style.display = 'none';
+            });
+
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active');
+            selectedTab.style.display = 'block';
+        }
+
+        function showTab(tabId) {
+          document.querySelectorAll('.tab-content').forEach(tab => {
+              tab.classList.remove('active');
+              tab.style.display = 'none';
+          });
+
+          const selectedTab = document.getElementById(tabId);
+          selectedTab.classList.add('active');
+          selectedTab.style.display = 'flex';
+        }
+        
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".project-gallery").forEach(gallery => {
+                let frames = gallery.querySelectorAll('.gallery-frame');
+                let currentFrameIndex = 0;
+
+                function changeImage(direction) {
+                    frames[currentFrameIndex].style.display = 'none';
+                    currentFrameIndex = (currentFrameIndex + direction + frames.length) % frames.length;
+                    frames[currentFrameIndex].style.display = 'flex';
+                }
+
+                gallery.querySelector('.prev').addEventListener('click', () => changeImage(-1));
+                gallery.querySelector('.next').addEventListener('click', () => changeImage(1));
+
+                frames.forEach((frame, index) => {
+                    frame.style.display = index === 0 ? 'flex' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
