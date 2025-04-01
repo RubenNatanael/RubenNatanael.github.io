@@ -51,7 +51,7 @@
             <p>Also, to integrate the binaries into the Linux image, as I mentioned, I used Poky. I created a layer where I added the C++ code as well as a Linux service that starts at boot and sets up the virtual CAN interfaces to which each ECU connects. After building, the image was launched on QEMU, where the simulation ran successfully.</p>
             <br>
             <p><h3>Technologies used:</h3>C++, Makefile, Yocto, QEMU, SocketCAN/CAN protocol</p>
-            <p><a href="https://github.com/yourusername/project1" target="_blank">View Code</a></p>
+            <p><a href="https://github.com/RubenNatanael/yocto_ecu/tree/main/RubenMujdei/meta-can" target="_blank">View Code</a></p>
           </div>
       
           <div class="project-gallery">
@@ -97,27 +97,36 @@
 
         <div id="project3" class="tab-content">
           <div class="project-text">
-            <h2>Honey</h2>
-            <p>In this personal project, I aimed to simulate various ECUs of a car, from the central MCU to various ECUs with sensors. I implemented ECUs for doors, battery, engine, and even a LiDAR and a traffic sign recognition camera. The goal of this project was to enable communication between different ECUs using the CAN protocol and embed the software in an image of personalized Linux distro using Poky. </p>
-            <p>The code is entirely written in C++ and uses the SocketCan library. I also implemented a console-based graphical interface that simulates the car's dashboard, displaying open or closed doors, speed, temperature, and engine status. The graphical interface also shows the environment recorded by the LiDAR (with randomly generated points). </p>
-            <p>The different ECUs communicate with each other via CAN and sockets, so the LiDAR is not functional while the car is stopped, speed does not increase when the car is stationary, and if obstacles are detected, the car stops. Additionally, when a traffic sign is detected with a certain speed, the MCU sends messages via CAN to reduce the speed, which in turn sends a request to the ECU to adjust the speed.</p>
-            <p>Several cases of ECU communication are implemented in the program, with each being independent and communicating only through CAN.</p>
-            <p>Also, to integrate the binaries into the Linux image, as I mentioned, I used Poky. I created a layer where I added the C++ code as well as a Linux service that starts at boot and sets up the virtual CAN interfaces to which each ECU connects. After building, the image was launched on QEMU, where the simulation ran successfully.</p>
+            <h2>WebPage Project ASP.NET</h2>
             <br>
-            <p><h3>Technologies used:</h3>C++, Makefile, Yocto, QEMU, SocketCAN/CAN protocol</p>
-            <p><a href="https://github.com/yourusername/project1" target="_blank">View Code</a></p>
+            <p>This project was among my first software projects. An acquaintance needed a website to sell their goods, so I decided to try to make one even though I was a beginner.</p>
+            <p>I used C# because it was a familiar language, and the ASP.NET framework to create the website. It was more of a learning project where I learned the basics of web applications, their logic, working with databases (in this case, MySQL), different frameworks like EntityData, and APIs (for payment).</p>
+            <p>Unfortunately, I didn't finish the project due to the amount of work I had at that time, but it's something I might pick up in the future. The project is very complex, and even though I was a beginner at the time, I still think it's quite successful for the knowledge I had back then.</p>
+            <p>The project also includes all necessary security measures. The Identity framework was used, which prevents access to pages without logging in and ensures the secure storage of data in the database.</p>
+            <br>
+            <p><h3>Technologies used:</h3>C#(ASP.NET, Identity), JavaScript, Striped API, MVC, CSS, HTML, MySQL</p>
+            <p><a href="https://github.com/RubenNatanael/ProbaMiere2.git" target="_blank">View Code</a></p>
           </div>
       
           <div class="project-gallery">
             <div class="gallery-images">
               <div class="gallery-frame" style="display: block;">
-                <img class="gallery-image" src="Screenshot from 2025-03-27 13-11-37.png" alt="Project Image 1">
+                <img class="gallery-image" src="P_honey.png" alt="Project Image 1">
               </div>
               <div class="gallery-frame" style="display: none;">
-                <img class="gallery-image" src="Screenshot from 2025-03-27 13-12-08.png" alt="Project Image 2">
+                <img class="gallery-image" src="P_honey2.png" alt="Project Image 2">
               </div>
               <div class="gallery-frame" style="display: none;">
-                <img class="gallery-image" src="Screenshot from 2025-03-27 13-14-11.png" alt="Project Image 3">
+                <img class="gallery-image" src="P_honey3.png" alt="Project Image 3">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="P_honey4.png" alt="Project Image 4">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="P_honey5.png" alt="Project Image 5">
+              </div>
+              <div class="gallery-frame" style="display: none;">
+                <img class="gallery-image" src="P_honey6.png" alt="Project Image 6">
               </div>
             </div>
             <div class="gallery-nav">
