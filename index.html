@@ -34,11 +34,34 @@
       </div>
       <div id="tabs" class="content active">
         <div class="tab-buttons">
+            <button onclick="showTab('project0')">OBD2- Car Diagnostic</button>
             <button onclick="showTab('project1')">CAN-Embedded</button>
             <button onclick="showTab('project2')">Android BankEase</button>
             <button onclick="showTab('project3')">.NET Shop</button>
             <button onclick="showTab('project4')">RobotArm</button>
             <button onclick="showTab('project5')">StepDrive</button>
+        </div>
+
+        <div id="project0" class="tab-content active">
+          <div class="project-text">
+            <h2>OBD2 Library for car diagnostics</h2>
+            <p>An open-source OBD-II library developed in C++, designed for Arduino, Linux, and Raspberry Pi Pico SDK. Built with SOLID principles and clean abstractions to handle multiple compilation targets, the project emphasizes professional, maintainable, and easy-to-understand code. The library is intuitive for end users and flexible enough for integration in web, Qt, and embedded projects. </p>
+            <br>
+            <p><h3>Technologies used:</h3>C++, Makefile, SocketCAN/CAN protocol, Arduino, RP PICO SDK</p>
+            <p><a href="https://github.com/RubenNatanael/OBD2-Scanner-Library" target="_blank">View Code</a></p>
+          </div>
+      
+          <div class="project-gallery">
+            <div class="gallery-images">
+              <div class="gallery-frame" style="display: block;">
+                <img class="gallery-image" src="OBD2.png" alt="Project Image 1">
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+              <span class="next" onclick="changeImage(1)">&#10095;</span>
+            </div>
+          </div>
         </div>
 
         <div id="project1" class="tab-content active">
